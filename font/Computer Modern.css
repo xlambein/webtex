@@ -1,0 +1,66 @@
+/* Serif */
+@font-face {
+  font-family: "Computer Modern";
+  src: url('http://spratt.github.io/Computer-Modern/cmunrm.otf');
+}
+@font-face {
+  font-family: "Computer Modern";
+  src: url('http://spratt.github.io/Computer-Modern/cmunti.otf');
+  font-style: italic;
+}
+@font-face {
+  font-family: "Computer Modern";
+  src: url('http://spratt.github.io/Computer-Modern/cmunbx.otf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Computer Modern";
+  src: url('http://spratt.github.io/Computer-Modern/cmunbi.otf');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Sans Serif */
+@font-face {
+  font-family: "Computer Modern Sans";
+  src: url('http://spratt.github.io/Computer-Modern/cmunss.otf');
+}
+@font-face {
+  font-family: "Computer Modern Sans";
+  src: url('http://spratt.github.io/Computer-Modern/cmunsi.otf');
+  font-style: italic;
+}
+@font-face {
+  font-family: "Computer Modern Sans";
+  src: url('http://spratt.github.io/Computer-Modern/cmunsx.otf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Computer Modern Sans";
+  src: url('http://spratt.github.io/Computer-Modern/cmunbxo.otf');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Typewriter */
+/* Note: This one is local because spratt.github.io/Computer-Modern/ only has Serif and Sans. */
+@font-face {
+  font-family: "Computer Modern Typewriter";
+  src: url('Computer Modern/cmuntt.otf');
+}
+@font-face {
+  font-family: "Computer Modern Typewriter";
+  src: url('Computer Modern/cmunit.otf');
+  font-style: italic;
+}
+@font-face {
+  font-family: "Computer Modern Typewriter";
+  src: url('Computer Modern/cmuntb.otf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Computer Modern Typewriter";
+  src: url('Computer Modern/cmuntx.otf');
+  font-weight: bold;
+  font-style: italic;
+}

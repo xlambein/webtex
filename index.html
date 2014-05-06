@@ -1,36 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Live markdown editor based on MathJax and Marked</title>
+<title>LaTeX-like web documents written with markdown and TeX</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+<link rel="stylesheet" href="font/Computer Modern.css" />
 
-<!-- based on MathJax/test/sample-dynamic-2.html -->
-
-<style>
-body {
-    width: 40em;
-}
-.hint {
-    text-align: right;
-    color: #555555;
-    font-size: small;
-}
-.hint a {
-    color: #555555;
-}
-textarea {
-    margin-top: 1ex;
-    width: 100%;
-    height: 20em;
-}
-.preview {
-    border:1px dotted; 
-    padding: 3px; 
-    width: 99%;
-    margin-top:1ex;
-}
-</style>
+<link rel="stylesheet" href="css/normalize.css" />
+<link rel="stylesheet" href="css/style.css" />
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -111,7 +89,7 @@ var Preview = {
   CreatePreview: function () {
     Preview.timeout = null;
     if (this.mjRunning) return;
-    var text = document.getElementById("marked-mathjax-input").value;
+    var text = document.getElementById("marked-mathjax-input").innerHTML;
     if (text === this.oldtext) return;
     text = this.Escape(text);                       //Escape tags before doing stuff
     this.buffer.innerHTML = this.oldtext = text;
@@ -154,32 +132,78 @@ Preview.callback.autoReset = true;  // make sure it can run more than once</scri
 </head>
 
 <body>
-
-<div style="float:right">
-  <a href="https://github.com/kerzol/markdown-mathjax">Get the source of this page</a>
-</div>
-
-<h4>Type something:</h4>
-<textarea id="marked-mathjax-input"
-          onkeyup="Preview.Update()"
-          name="comment"
-          "autofocus">##### test
-
-$ \Gamma, G$
-
-$A_G A_\Gamma$</textarea>
-
-  <div class="hint">Use 
-    <a href="http://en.wikibooks.org/wiki/LaTeX/Mathematics">$\LaTeX$</a>
-    to type formulæ 
-    and <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown</a> to format text.
+  <div class="title">
+    <div>
+      WebTeX : Example document<br>
+      <small>Based on the course FSAB1102<br>given by Roland Keunings at the UCL</small>
+    </div>
+    <div class="author">Xavier Lambein</div>
+    <div class="date" datetime="2014-05-06">2014-05-06</div>
   </div>
-
+  
   <div class="preview" id="marked-mathjax-preview"></div>
   <div class="preview" id="marked-mathjax-preview-buffer" 
        style="display:none;
               position:absolute; 
               top:0; left: 0"></div>
+
+<h2>
+  <small>Appendice A</small>
+  Source code
+</h4>
+
+<pre id="marked-mathjax-input">
+\[% Custom commands
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\let\oldhat\hat
+\renewcommand{\hat}[1]{\oldhat{\mathbf{#1}}}
+\newcommand{\d}{\mathrm{d}}
+\newcommand{\norm}[1]{\left\Vert #1\right\Vert}
+\]
+
+## 1    Int&eacute;grale de ligne dans un champ scalaire
+
+### 1.1    Mise en contexte
+
+Soit $f : D \subset \mathbb{R}^3 \rightarrow \mathbb{R}$ un champ scalaire. Si $f$ repr&eacute;sente la densit&eacute; de mati&egrave;re par unit&eacute; de volume de $D$, alors
+\[
+  \int_D\! f = \text{quantit&eacute; de mati&egrave;re (masse totale) r&eacute;partie dans }D\text.
+\]
+
+### 1.2    D&eacute;finition de l'int&eacute;grale de ligne
+
+Soit une courbe $C \in \mathbb{R}^3$, dont voici une repr&eacute;sentation param&eacute;trique :
+\[
+  \vec{r} = x(t) \,\vec{i} + y(t) \,\vec{j} + z(t) \,\vec{k}
+  \quad \text{avec}\ t \in [a, b] \text.
+\]
+
+L'int&eacute;grale selon la courbe est d&eacute;finie, comme pr&eacute;c&eacute;demment, en cinq &eacute;tapes :
+
+1. Partitionnement. Soit :
+\[
+  a = t_0 &lt; t_1 &lt; t_2 &lt; \dots &lt; t_{n-1} &lt; t_n = b
+\]
+et
+\[
+  \Delta t_i = t_i - t_{i-1} \text.
+\]
+&Agrave; chaque $t_i$ correspond un point $\vec{r}_i = \vec{r}(t_i)$ de la courbe.
+
+  On consid&egrave;re des segments $\Delta\vec{r}_i = \vec{r}_i - \vec{r}_{i-1}$ reliant les points de la courbe.
+
+2. D&eacute;finition d'une norme : $\mathrm{max}\{\norm{\Delta\vec{r}_i}\}$.
+
+3. Dans chaque segment, on choisit arbitrairement $t^*_i \in [t_i, t_{i-1}]$ auquel correspond un point $\vec{r}^*_i = \vec{r}(t^*_i)$.
+
+4. On d&eacute;finit une somme de Riemann $S_n = \sum_{i=1}^n f(\vec{r}^*_i) \norm{\Delta\vec{r}_i}$.
+
+5. Enfin, on prend la limite de la somme de Riemann :
+\[
+  \lim_{\substack{n\rightarrow \infty\\\norm{\Delta\vec{r}_i}\rightarrow 0}} S_n = \int_C\! f(x, y, z)\,\d S \text.
+\]
+Si cette limite existe et est ind&eacute;pendante du choix de $t^*_i$, alors l'int&eacute;grale existe.
+</pre>
 
 <script>
 Preview.Init();
@@ -188,3 +212,4 @@ Preview.Update();
 
 </body>
 </html>
+
