@@ -1,21 +1,21 @@
 /* Serif */
 @font-face {
   font-family: "Computer Modern";
-  src: url('http://spratt.github.io/Computer-Modern/cmunrm.otf');
+  src: url('Computer Modern/cmunrm.otf');
 }
 @font-face {
   font-family: "Computer Modern";
-  src: url('http://spratt.github.io/Computer-Modern/cmunti.otf');
+  src: url('Computer Modern/cmunti.otf');
   font-style: italic;
 }
 @font-face {
   font-family: "Computer Modern";
-  src: url('http://spratt.github.io/Computer-Modern/cmunbx.otf');
+  src: url('Computer Modern/cmunbx.otf');
   font-weight: bold;
 }
 @font-face {
   font-family: "Computer Modern";
-  src: url('http://spratt.github.io/Computer-Modern/cmunbi.otf');
+  src: url('Computer Modern/cmunbi.otf');
   font-weight: bold;
   font-style: italic;
 }
@@ -23,21 +23,21 @@
 /* Sans Serif */
 @font-face {
   font-family: "Computer Modern Sans";
-  src: url('http://spratt.github.io/Computer-Modern/cmunss.otf');
+  src: url('Computer Modern/cmunss.otf');
 }
 @font-face {
   font-family: "Computer Modern Sans";
-  src: url('http://spratt.github.io/Computer-Modern/cmunsi.otf');
+  src: url('Computer Modern/cmunsi.otf');
   font-style: italic;
 }
 @font-face {
   font-family: "Computer Modern Sans";
-  src: url('http://spratt.github.io/Computer-Modern/cmunsx.otf');
+  src: url('Computer Modern/cmunsx.otf');
   font-weight: bold;
 }
 @font-face {
   font-family: "Computer Modern Sans";
-  src: url('http://spratt.github.io/Computer-Modern/cmunbxo.otf');
+  src: url('Computer Modern/cmunbxo.otf');
   font-weight: bold;
   font-style: italic;
 }
