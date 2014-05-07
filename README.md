@@ -3,6 +3,11 @@ WebTex
 LaTeX-like web documents written with markdown and TeX. Based on Markdown and MathJax
 
 
+## Demo
+
+An demo can be found here : http://xlambein.github.io/webtex/.
+
+
 ## Dependencies
 
 - https://github.com/chjj/marked
