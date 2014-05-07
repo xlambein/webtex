@@ -1,6 +1,6 @@
 WebTex
 ================
-LaTeX-like web documents written with markdown and TeX. Based on Markdown and MathJax
+LaTeX-like web documents written with markdown and TeX. Based on Markdown and MathJax, inspired by [markdown-mathjax](https://github.com/kerzol/markdown-mathjax).
 
 
 ## Demo
