@@ -4,8 +4,7 @@ marked.setOptions({
   tables: true,
   breaks: false,
   pedantic: false,
-  sanitize: false, // IMPORTANT, because we do MathJax before markdown,
-                   //            however we do escaping in 'CreatePreview'.
+  sanitize: false,
   smartLists: true,
   smartypants: false
 });

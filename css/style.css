@@ -1,87 +1,41 @@
 html {
-    background-color: gray;
-    height: 100%;
-    font-size: 16px;
+  background-color: gray;
+  height: 100%;
+  font-size: 16px;
 }
 
 body {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    
-    max-width: 794px;
-    min-height: 100%;
-    padding: 114px;
-    margin: auto;
-    
-    background-color: white;
-    
-    font-family: "Computer Modern", serif;
-    
-    text-align: justify;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  max-width: 794px;
+  min-height: 100%;
+  padding: 114px;
+  margin: auto;
+
+  background-color: white;
+
+  font-family: "Computer Modern", serif;
+
+  text-align: justify;
+
+  counter-reset: part;
+  counter-reset: section;
 }
 
-h1, h2, h3, h4, h5 {
-    font-weight: bold;
+/*** HEADINGS ***/
+
+h2:before, h3:before, h4:before {
+  padding-right: 1em;
 }
 
-h1 small, h2 small {
-    display: block;
-    margin-bottom: 34px;
-    
-    font-size: 2rem;
+h1, h2, h3, h4, .appendices:before {
+  margin-top: 0.75em;
+  margin-bottom: 0.5em;
 }
 
-h1 { /* part */
-    text-align: center;
-    font-size: 33px;
-    
-    /*
-    margin-top: 9cm;
-    margin-bottom: 16cm;
-    */
-    margin-top: 143px;
-    margin-bottom: 143px;
-}
-
-h2 { /* chapter */
-    font-size: 33px;
-    
-    margin-top: 143px;
-    margin-bottom: 60px;
-}
-
-h3 { /* section */
-    font-size: 1.44em;
-    
-    margin-top: 39px;
-    margin-bottom: 16px;
-}
-
-h4 { /* subsection */
-    font-size: 1.2em;
-    
-    margin-top: 27px;
-    margin-bottom: 10px;
-}
-
-h5 { /* subsubsection */
-    font-size: 1em;
-}
-
-p {
-   -webkit-hyphens: auto;
-      -moz-hyphens: auto;
-           hyphens: auto;
-
-    line-height: 120%;
-    margin: 0;
-}
-
-p + p {
-    text-indent: 1.5em;
-}
-
+/* title */
 .title {
   margin: 24px;
   
@@ -97,12 +51,98 @@ p + p {
   font-size: 0.7em; 
 }
 
-strong {
+/* part */
+h1:before {
+  display: block;
+
+  font-size: 1.44rem;
+  
+  content: "Part " counter(part, upper-roman);
+  counter-increment: part;
+}
+
+h1 {
+  font-size: 33px;
+}
+
+/* section */
+h2:before {
+  content: counter(section);
+  counter-increment: section;
+}
+
+h2 {
+  font-size: 1.44em;
+  
+  counter-reset: subsection;
+}
+
+/* subsection */
+h3:before {
+  content: counter(section) "." counter(subsection) " ";
+  counter-increment: subsection;
+}
+
+h3 {
+  font-size: 1.2em;
+  
+  counter-reset: subsubsection;
+}
+
+/* subsubsection */
+h4:before {
+  content: counter(section) "." counter(subsection) "." counter(subsubsection) " ";
+  counter-increment: subsubsection;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+/* appendices */
+.appendices:before {
+  display: block;
+
+  font-size: 33px;
   font-weight: bold;
+  
+  content: "Appendices";
+}
+
+.appendices {
+  counter-reset: appendix;
+}
+
+.appendices>h2:before {
+  padding-right: 1em;
+  
+  content: counter(appendix, upper-latin);
+  counter-increment: appendix;
+}
+
+/*** PARAGRAPHS ***/
+
+p {
+ -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+         hyphens: auto;
+
+  line-height: 120%;
+  margin: 0;
+}
+
+/* Two styles of indentation */
+/* English style : indent starting from the second paragraph */
+p + p { text-indent: 1.5em; }
+/* French style : indent every single paragraph */
+p { text-indent: 1.5em; }
+
+/* Do not indent in lists, it looks terrible. */
+li>p {
+  text-indent: 0;
 }
 
 pre {
   font: 1em "Computer Modern Typewriter", monospace;
   white-space: pre-wrap;
-  word-break: break-all;
 }

@@ -31,12 +31,10 @@
   
   <div id="webtex-target"></div>
 
-<h2>
-  <small>Appendice A</small>
-  Source code
-</h4>
+  <div class="appendices">
+    <h2>Source code</h2>
 
-<pre id="webtex-source">
+    <pre id="webtex-source">
 \[% Custom commands
 \renewcommand{\vec}[1]{\mathbf{#1}}
 \let\oldhat\hat
@@ -45,16 +43,18 @@
 \newcommand{\norm}[1]{\left\Vert #1\right\Vert}
 \]
 
-## 1    Int&eacute;grale de ligne dans un champ scalaire
+# Intégrales définies
 
-### 1.1    Mise en contexte
+## Int&eacute;grale de ligne dans un champ scalaire
+
+### Mise en contexte
 
 Soit $f : D \subset \mathbb{R}^3 \rightarrow \mathbb{R}$ un champ scalaire. Si $f$ repr&eacute;sente la densit&eacute; de mati&egrave;re par unit&eacute; de volume de $D$, alors
 \[
   \int_D\! f = \text{quantit&eacute; de mati&egrave;re (masse totale) r&eacute;partie dans }D\text.
 \]
 
-### 1.2    D&eacute;finition de l'int&eacute;grale de ligne
+### D&eacute;finition de l'int&eacute;grale de ligne
 
 Soit une courbe $C \in \mathbb{R}^3$, dont voici une repr&eacute;sentation param&eacute;trique :
 \[
@@ -87,7 +87,8 @@ et
   \lim_{\substack{n\rightarrow \infty\\\norm{\Delta\vec{r}_i}\rightarrow 0}} S_n = \int_C\! f(x, y, z)\,\d S \text.
 \]
 Si cette limite existe et est ind&eacute;pendante du choix de $t^*_i$, alors l'int&eacute;grale existe.
-</pre>
+    </pre>
+  </div>
   
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script type="text/javascript" src="lib/marked/lib/marked.js"></script>
